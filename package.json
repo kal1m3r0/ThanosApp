@@ -1,0 +1,22 @@
+{
+  "name": "thanosapp",
+  "version": "1.0.0",
+  "description": "applicativo per restituire errore 403",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kal1m3r0/ThanosApp.git"
+  },
+  "author": "Networkvision",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kal1m3r0/ThanosApp/issues"
+  },
+  "homepage": "https://github.com/kal1m3r0/ThanosApp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
