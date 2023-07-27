@@ -1,14 +1,29 @@
-const http = require('http');
+const express = require('express');
+const app = express();
+const router = express.Router();
 
-const hostname = '127.0.0.1';
+app.use(router);
+
+
+// Middleware per restituire sempre errore 403
+router.get('/', (req, res, next) =>
+ {
+    return res.status(403).send('Forbidden');
+
+}   ) ;
+
+// Middleware per gestire gli indirizzi che non esistono (errore 404)
+app.use('*', (req, res, next) =>
+{
+    return res.status(404).send('Non trovato');
+
+
+}   ) ;
+
+
+
+// Avvia il server
 const port = 3000;
-
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World');
-});
-
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port, () => {
+    console.log(`Server avviato su http://localhost:${port}`);
 });
